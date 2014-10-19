@@ -1,0 +1,25 @@
+# to deploy to S3, touch ./data/s3 before running this
+#
+DATE=`/bin/date`;
+
+[ ! -d ./node_modules ] && (
+npm install -g wintersmith;
+npm install wintersmith-tag --save-dev;
+npm install --save-dev;
+)
+
+echo "Development tasks : ";
+echo 'DEPRICATED : grunt wintersmith-preview;';
+rm -rf ./build;
+wintersmith build;
+wintersmith preview;
+
+echo 'DEPRICATED : grunt clean:build; grunt compass:dev;';
+
+echo "Staging tasks : ";
+echo 'DEPRICATED : grunt wintersmith-staging;';
+
+echo "Production tasks : ";
+
+echo "Delopyment tasks :";
+

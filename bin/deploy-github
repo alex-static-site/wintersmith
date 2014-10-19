@@ -1,0 +1,5 @@
+DATE=`/bin/date`;
+
+[ -d ./www.mypigbank.com ] && echo "deleting old ./www.mypigbank.com" && /bin/rm -rf ./www.mypigbank.com;
+git clone https://onztv-inc@bitbucket.org/onztvweb/www.mypigbank.com.git
+( cd ./www.mypigbank.com;rm -rf ./html;cd ..;mv ./build ./www.mypigbank.com/html;cd ./www.mypigbank.com;git add -A;git commit -m "Build $DATE";git push );
